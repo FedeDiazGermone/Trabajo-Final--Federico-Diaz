@@ -1,0 +1,94 @@
+.home-button{
+  padding-right: 170px; 
+  margin-left: -150px;
+}
+
+.lista-productos{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 20px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+
+/* Estilos básicos para el navbar */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar .navbar-brand {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative; /* Para el posicionamiento del dropdown */
+}
+
+/* Dropdown personalizado */
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown .custom-dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 100%;
+  width: 200px; /* Ajusta el ancho según sea necesario */
+}
+
+.custom-dropdown .custom-dropdown-menu li {
+  width: 100%;
+}
+
+.custom-dropdown .custom-dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.custom-dropdown .custom-dropdown-menu a:hover {
+  background-color: #e9ecef;
+}
+
+/* Mostrar dropdown al hacer hover sobre el enlace */
+.custom-dropdown:hover .custom-dropdown-menu {
+  display: block;
+}
+
+/* Ocultar dropdown cuando no está en hover */
+
+/* Estilo para el avatar */
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Para hacerlo circular si el avatar es cuadrado */
+  object-fit: cover; /* Ajusta la imagen al tamaño especificado */
+  /* Otros estilos opcionales según sea necesario */
+}
+
+.btn-crud {
+  display: flex;
+}

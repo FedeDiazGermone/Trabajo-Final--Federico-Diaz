@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+
+{% block contenidoQueCambia %}
+  
+  <h1>Gestión de Ventas</h1>
+
+  <p>{{message}}</p>
+
+  {% if url %}
+    <img src="{{url}}" alt="avatar">
+
+  {% endif %}
+
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,45 @@
+<!-- Navigation-->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <div class="home-button">
+        <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+      </div>
+
+      <!-- Nuevo agregar avatar si está disponible-->      
+      
+      {% if request.user.avatar %}
+        <img src="{{request.user.avatar.imagen.url}}" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%;">
+      {% endif %}
+
+      <!-- Fin Nuevo -->
+      
+      {% if request.user.is_staff %}
+        <!-- Estas logueado como proveedor  -->
+        <a class="navbar-brand" href="{% url 'Proveedores' 0 %}">Proveedores</a>                             
+        <a class="navbar-brand" href="{% url 'ListaProductos' %}"> Gestión de Productos</a>
+        <a class="navbar-brand" href="{% url 'proveedor_formulario' %}">Ingresar Proveedor</a>      
+        <a class="navbar-brand" href="{% url 'EditaPerfil' %}">Editar Perfil</a>
+        <a class="navbar-brand" href="{% url 'AgregarAvatar' %}">Agregar Avatar</a>
+        
+      {% endif %}
+      
+      <a class="navbar-brand" href="{% url 'BusquedaMarca' %}">Buscar Producto</a>      
+      <a class="navbar-brand" href="{% url 'Productos' 0 %}"> Productos</a>
+      <a class="navbar-brand" href="{% url 'compra_formulario' %}">Ingresar Compra</a>          
+                  
+      <a class="navbar-brand" href="{% url 'Compras' 0 %}">Productos vendidos</a>
+      <a class="navbar-brand" href="{% url 'about' %}">Sobre mi</a>
+      
+      {% if user.is_authenticated %}
+        <p>Bienvenido {{user.username}}</p>
+        <form method="post" action="{% url 'Logout' %}"> {% csrf_token %}
+          <button class="btn btn-primary" type="submit">Logout</button>
+        </form>                
+      </li>
+      {% else %}
+        <a class="btn btn-primary" href="{% url 'Login' %}">Ingresar</a>
+        <a class="btn btn-primary" href="{% url 'Registrar' %}">Registrar</a>
+      {% endif %}
+    </div>
+  </nav>
+

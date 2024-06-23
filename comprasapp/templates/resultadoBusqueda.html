@@ -1,0 +1,28 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+  
+<p>Buscamos los cursos con la marca: {{marca}}</p>
+
+{% if productos %}
+
+<ul>
+  {% for producto in productos %}
+    
+    <li>
+      {{producto.nombre}} - {{producto.precio_costo}} - {{producto.tipo }}
+    </li>
+      
+  {% endfor %}
+
+</ul>
+
+{% else %}
+
+  <p>No hubo coincidencias!</p>
+
+{% endif %}
+  
+
+{% endblock contenidoQueCambia %}
+  

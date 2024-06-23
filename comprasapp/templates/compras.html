@@ -1,0 +1,52 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+{% load static %}
+
+<h1>Vista de compras</h1>
+
+<p>Lista de Compras</p>
+
+{% if lista_compras %}
+
+<section class="lista-compras">
+
+ {% for compra in lista_compras %}
+
+  <div class="card" style="width: 18rem;">    
+    <div class="card-body">
+      <h5 class="card-title">{{compra.nro}} - {{compra.precio_venta}} - {{compra.cantidad}} - {{compra.fecha_compra}}</h5>            
+    </div>
+  </div>
+
+  {% endfor %}
+    
+</section>
+{% else %}
+<p>No hay compras disponibles en este momento.</p>
+{% endif %}
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item {% if current_page == 0 %}disabled{% endif %}">
+      {% if current_page > 0 %}
+        <a class="page-link" href="{% url 'Compras' current_page|add:-1 %}?direccion=previous">Previous</a>
+      {% else %}
+        <span class="page-link">Previous</span>
+      {% endif %}
+    </li>
+    <li class="page-item {% if current_page >= max_page %}disabled{% endif %}">
+      {% if current_page < max_page %}
+        <a class="page-link" href="{% url 'Compras' current_page|add:1 %}?direccion=next">Next</a>
+      {% else %}
+        <span class="page-link">Next</span>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+
+
+{% endblock contenidoQueCambia %}
+  

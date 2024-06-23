@@ -1,0 +1,24 @@
+
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+  
+<form action="{% url 'EditaPerfil' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
+
+  {{formulario.as_p}}
+
+  {% if avatar %}
+    <h3>Avatar Actual</h3>
+    <img src="{{ avatar.imagen.url }}" alt="Avatar de {{ usuario.username }}">
+  {% endif %}
+ 
+  <label for="id_imagen">Avatar:</label>
+  <input type="file" name="imagen" id="id_imagen">      
+  <button type="submit"> Actualizar </button>
+
+</form>
+
+{% endblock contenidoQueCambia %}
+
+
+

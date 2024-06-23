@@ -1,0 +1,54 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+{% load static %}
+
+<h1>Vista de proveedores</h1>
+
+<p>Lista de proveedores</p>
+
+{% if lista_proveedores %}
+
+<section class="lista-proveedores">
+
+  {% for proveedor in lista_proveedores %}
+
+  <div class="card" style="width: 18rem;">    
+    <div class="card-body">
+      <h5 class="card-title">{{proveedor.nombre}} - {{proveedor.email}} - {{proveedor.telefono}}</h5>
+      <p class="card-text">Detalle del proveedor.</p>
+      <a href="#" class="btn btn-primary">Ver detalle</a>
+    </div>
+  </div>
+
+  {% endfor %}
+    
+</section>
+{% else %}
+<p>No hay proveedores registrados.</p>
+{% endif %}
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item {% if current_page == 0 %}disabled{% endif %}">
+      {% if current_page > 0 %}
+        <a class="page-link" href="{% url 'Proveedores' current_page|add:-1 %}?direccion=previous">Previous</a>
+      {% else %}
+        <span class="page-link">Previous</span>
+      {% endif %}
+    </li>
+    <li class="page-item {% if current_page >= max_page %}disabled{% endif %}">
+      {% if current_page < max_page %}
+        <a class="page-link" href="{% url 'Proveedores' current_page|add:1 %}?direccion=next">Next</a>
+      {% else %}
+        <span class="page-link">Next</span>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+
+
+{% endblock contenidoQueCambia %}
+  
