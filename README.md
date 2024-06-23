@@ -21,6 +21,6 @@ El resto de los usuarios pueden:
 
 Nota: Debe instalar la libreria Pillow
 
-[link al video]()
+[link al video](https://drive.google.com/drive/folders/1DtYZyWdLoNh1ZnOe0HJ4Qx4oAjNr_Pl3?usp=sharing)
 
-entre paréntesis recto [link video](url video)
+
