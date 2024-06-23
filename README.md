@@ -1,6 +1,8 @@
-#### Autor: Tu nombre CI
+#### Autor: Federico Diaz 5080457-9
 
 ## Sistema de ventas
+
+URL: http://localhost:8000/comp-app
 
 Es un sistema de ventas con usuarios que son administradores, eventualmente pueden ser proveedores o no.
 Los administradores tienen acceso a:
@@ -17,3 +19,4 @@ El resto de los usuarios pueden:
  - Ingresar una compra
  - Listar los metadatos de los productos
 
+Nota: Debe instalar la libreria Pillow
