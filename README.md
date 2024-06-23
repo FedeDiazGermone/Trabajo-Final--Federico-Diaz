@@ -20,3 +20,7 @@ El resto de los usuarios pueden:
  - Listar los metadatos de los productos
 
 Nota: Debe instalar la libreria Pillow
+
+[link al video]()
+
+entre paréntesis recto [link video](url video)
