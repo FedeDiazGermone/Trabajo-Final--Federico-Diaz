@@ -21,6 +21,8 @@ El resto de los usuarios pueden:
 
 Nota: Debe instalar la libreria Pillow
 
+
+A continuación el video explicando el funcionamiento de la pagina web : 
 [link al video](https://drive.google.com/drive/folders/1DtYZyWdLoNh1ZnOe0HJ4Qx4oAjNr_Pl3?usp=sharing)
 
 
